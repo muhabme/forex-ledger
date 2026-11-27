@@ -20,7 +20,7 @@
     "test:cov": "node --experimental-vm-modules --no-warnings=ExperimentalWarning node_modules/jest/bin/jest.js --coverage",
     "typecheck": "tsc --noEmit",
     "test:e2e": "node --experimental-vm-modules --no-warnings=ExperimentalWarning node_modules/jest/bin/jest.js --config tests/jest-e2e.config.js",
-    "currencies:update": "node scripts/update-currencies.ts && prettier --write src/money/currencies.generated.ts"
+    "currencies:update": "node scripts/update-currencies.ts && prettier --write src/modules/currencies/data/currencies.generated.ts"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",

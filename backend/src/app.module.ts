@@ -6,6 +6,7 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { appConfig } from "./config/app.config.js";
 import { databaseConfig } from "./config/database.config.js";
 import { validateEnv } from "./config/env.validation.js";
+import { CurrenciesModule } from "./modules/currencies/currencies.module.js";
 import { HealthCheckModule } from "./modules/health-check/health-check.module.js";
 
 @Module({
@@ -22,6 +23,7 @@ import { HealthCheckModule } from "./modules/health-check/health-check.module.js
       }),
     }),
     HealthCheckModule,
+    CurrenciesModule,
   ],
 })
 export class AppModule {}

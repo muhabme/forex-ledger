@@ -1,4 +1,4 @@
-// Regenerates src/money/currencies.generated.ts: every fiat currency Frankfurter
+// Regenerates src/modules/currencies/data/currencies.generated.ts: every fiat currency Frankfurter
 // has rates for, with its decimals from the official ISO 4217 list.
 // Run with `npm run currencies:update` and commit the result.
 import { writeFile } from "node:fs/promises";
@@ -8,7 +8,7 @@ const FRANKFURTER_CURRENCIES_URL = "https://api.frankfurter.dev/v2/currencies";
 const ISO_4217_URL =
   "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml";
 const OUTPUT_FILE = new URL(
-  "../src/money/currencies.generated.ts",
+  "../src/modules/currencies/data/currencies.generated.ts",
   import.meta.url,
 );
 
