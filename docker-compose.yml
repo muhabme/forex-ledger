@@ -3,6 +3,7 @@ name: forexledger
 services:
   mongo:
     image: mongo:8.0
+    attach: false
     volumes:
       - mongo-data:/data/db
     healthcheck:
@@ -26,6 +27,8 @@ services:
       retries: 10
 
   frontend:
+    environment:
+      NGINX_ENTRYPOINT_QUIET_LOGS: 1
     build: ./frontend
     ports:
       - "8080:80"
