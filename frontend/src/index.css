@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+/* 
+   Palette: https://coolors.co/12261f-5f6b66-f5f3ea-fcfbf6-d9d7cf-c4c2bb-1c7a5a-8fd4b4-a9e0c6-b3261e
+*/
+@theme {
+  /* Greens */
+  --color-primary: #12261f; /* Evergreen: app bar, text, full-screen overlays */
+  --color-secondary: #1c7a5a; /* Turf Green: focus rings, interactive emphasis */
+  --color-accent: #8fd4b4; /* Celadon: logo badge, buttons, highlights on primary */
+  --color-accent-hover: #a9e0c6; /* Celadon (lighter): accent on hover */
+  --color-background: #f5f3ea; /* Soft Linen: page background */
+
+  /* Warm greys */
+  --color-surface: #fcfbf6; /* Porcelain: cards */
+  --color-muted: #5f6b66; /* Granite: secondary text, hints */
+  --color-border: #d9d7cf; /* Dust Grey: card borders */
+  --color-border-strong: #c4c2bb; /* Silver: form control borders */
+
+  /* Red */
+  --color-danger: #b3261e; /* Mahogany Red: errors */
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-heading:
+    "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-control: 0.625rem;
+
+  --shadow-card: 0 1px 2px rgb(18 38 31 / 6%), 0 8px 24px rgb(18 38 31 / 6%);
+
+  --animate-fade-out: fade-out 0.45s ease-out forwards;
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    @apply bg-background text-primary antialiased;
+  }
+
+  h1,
+  h2 {
+    @apply font-heading leading-[1.2] font-bold tracking-[-0.01em];
+  }
+}
