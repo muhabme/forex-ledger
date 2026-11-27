@@ -1,11 +1,17 @@
 import { plainToInstance } from "class-transformer";
-import { IsInt, Max, Min, validateSync } from "class-validator";
+import { IsInt, Matches, Max, Min, validateSync } from "class-validator";
 
 export class EnvironmentVariables {
   @IsInt()
   @Min(1)
   @Max(65535)
   PORT: number = 3000;
+
+  @Matches(/^mongodb(\+srv)?:\/\/.+/, {
+    message:
+      "MONGODB_URI must be a mongodb:// or mongodb+srv:// connection string",
+  })
+  MONGODB_URI!: string;
 }
 
 // Runs once at startup (ConfigModule's `validate` hook): converts the raw strings,
