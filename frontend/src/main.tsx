@@ -1,3 +1,5 @@
+import "@fontsource-variable/inter";
+import "@fontsource-variable/space-grotesk";
 import "./index.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
